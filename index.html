@@ -248,9 +248,334 @@ btn.style.display="block";
 
 btn.onclick=()=>{
 
-alert("Bagian 2 nanti akan menampilkan isi surat ❤️");
+document.body.style.overflowY="auto";
+
+document.body.innerHTML+=`
+
+<section id="surat" style="min-height:100vh;padding:80px 20px;background:linear-gradient(180deg,#fff0f6,#ffe3ef);display:flex;justify-content:center;align-items:center;">
+
+<div style="max-width:850px;background:white;border-radius:25px;padding:40px;box-shadow:0 10px 40px rgba(0,0,0,.15);">
+
+<h1 style="text-align:center;color:#ff4d8d;font-family:'Great Vibes';font-size:60px;margin-bottom:30px;">
+
+Maafin Aku Ya Sayang ❤️
+
+</h1>
+
+<p id="typing"
+
+style="white-space:pre-line;font-size:20px;line-height:2;color:#555;">
+
+</p>
+
+</div>
+
+</section>
+
+`;
+
+window.scrollTo({
+
+top:document.body.scrollHeight,
+
+behavior:"smooth"
+
+});
+
+const isi=`Hai sayangg Errika Putri Aprilia ❤️
+
+Aku minta maaf yaa...
+
+Maafin akuu karena sifat kekanak-kanakan akuu.
+
+Maafin akuu yang kemarin tiba-tiba ngambek nggak jelas.
+
+Aku jujur di sini benar-benar menyesal... se-menyesalnya.
+
+Setelah aku pikir-pikir lagi, aku sadar kalau sikapku kemarin nggak seharusnya terjadi.
+
+Aku sadar mungkin sikapku bikin kamu capek, bikin kamu sedih, atau bahkan bikin kamu bingung.
+
+Padahal niatku bukan buat nyakitin kamu.
+
+Aku cuma terlalu mengikuti emosiku saat itu.
+
+Sekarang aku sadar kalau hubungan kita jauh lebih penting daripada ego atau rasa gengsi.
+
+Aku benar-benar ingin memperbaiki semuanya.
+
+Aku ingin belajar jadi pribadi yang lebih dewasa.
+
+Belajar mengendalikan emosiku.
+
+Belajar supaya bisa menjadi laki-laki yang lebih baik buat kamu.
+
+Terima kasih ya sayang...
+
+Karena selama ini kamu masih sabar menghadapi aku.
+
+Terima kasih karena sudah mau bertahan sejauh ini.
+
+Kalau kamu masih mau kasih aku kesempatan...
+
+Aku janji bakal berusaha berubah.
+
+Aku tahu perubahan nggak cukup cuma lewat kata-kata.
+
+Makanya aku ingin membuktikannya lewat sikapku nanti.
+
+Sekali lagi...
+
+Maafin akuu ya sayangg...
+
+Aku sayang banget sama kamu, Errika Putri Aprilia ❤️`;
+
+let i=0;
+
+function ketik(){
+
+if(i<isi.length){
+
+document.getElementById("typing").innerHTML+=isi.charAt(i);
+
+i++;
+
+setTimeout(ketik,35);
+
+}else{
+
+munculLove();
 
 }
+
+}
+
+ketik();
+
+}
+
+function munculLove(){
+  function tampilkanPenutup() {
+
+document.body.innerHTML += `
+
+<section id="penutup" style="
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+background:linear-gradient(180deg,#ffe3ef,#ffd6e7);
+">
+
+<div style="
+max-width:850px;
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+">
+
+<div style="font-size:120px;">
+💐
+</div>
+
+<h1 style="
+font-family:'Great Vibes',cursive;
+font-size:65px;
+color:#ff4d8d;
+margin-bottom:25px;
+">
+Terima Kasih Sayang ❤️
+</h1>
+
+<p style="
+font-size:22px;
+line-height:2;
+color:#555;
+">
+
+Terima kasih ya sayang...
+
+Sudah meluangkan waktu membaca surat kecil dari aku.
+
+Aku tahu mungkin kata maaf saja belum cukup.
+
+Tapi aku benar-benar ingin berubah.
+
+Aku ingin membuktikannya lewat sikapku.
+
+Bukan hanya lewat kata-kata.
+
+Aku harap kamu masih mau memberi aku kesempatan.
+
+Aku sayang banget sama kamu.
+
+Errika Putri Aprilia ❤️
+
+</p>
+
+<button id="janji" style="
+margin-top:35px;
+padding:15px 40px;
+border:none;
+border-radius:50px;
+background:#ff4d8d;
+color:white;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(255,0,120,.3);
+transition:.3s;
+">
+
+🤍 Aku Janji Berubah 🤍
+
+</button>
+
+</div>
+
+</section>
+
+`;
+
+document.getElementById("janji").onclick=function(){
+
+for(let i=0;i<180;i++){
+
+let love=document.createElement("div");
+
+love.innerHTML=Math.random()>0.5?"❤️":"🌸";
+
+love.style.position="fixed";
+
+love.style.left=Math.random()*100+"vw";
+
+love.style.top=Math.random()*100+"vh";
+
+love.style.fontSize=(18+Math.random()*30)+"px";
+
+love.style.pointerEvents="none";
+
+love.style.animation="loveAnim 4s forwards";
+
+document.body.appendChild(love);
+
+setTimeout(function(){
+
+love.remove();
+
+},4000);
+
+}
+
+setTimeout(function(){
+
+alert("Aku akan membuktikan semuanya lewat tindakan, bukan hanya ucapan.\n\nAku sayang kamu, Errika ❤️");
+
+},800);
+
+}
+
+}
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes loveAnim{
+
+0%{
+
+opacity:0;
+
+transform:scale(.2);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.4);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-180px);
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+for(let i=0;i<120;i++){
+
+let love=document.createElement("div");
+
+love.innerHTML="❤️";
+
+love.style.position="fixed";
+
+love.style.left=Math.random()*100+"vw";
+
+love.style.top=Math.random()*100+"vh";
+
+love.style.fontSize=(15+Math.random()*30)+"px";
+
+love.style.pointerEvents="none";
+
+love.style.animation="loveAnim 3s forwards";
+
+document.body.appendChild(love);
+
+setTimeout(()=>love.remove(),3000);
+
+}
+
+}
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+
+@keyframes loveAnim{
+
+0%{
+
+opacity:0;
+
+transform:scale(.2);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.3);
+
+}
+
+100%{
+
+opacity:0;
+
+transform:translateY(-150px);
+
+}
+
+}
+
+`;
+
+document.head.appendChild(style);
 
 const area=document.getElementById("particles");
 
