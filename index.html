@@ -1,1 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Untuk Errika ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#ffd6e7,#ffeef5,#ffd9eb);
+overflow:hidden;
+height:100vh;
+
+}
+
+#particles{
+
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:1;
+
+}
+
+.fall{
+
+position:absolute;
+top:-50px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+100%{
+
+transform:translateY(120vh) rotate(360deg);
+
+}
+
+}
+
+.center{
+
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:5;
+
+}
+
+.envelope{
+
+width:320px;
+height:220px;
+position:relative;
+cursor:pointer;
+transition:.5s;
+
+}
+
+.envelope:hover{
+
+transform:scale(1.05);
+
+}
+
+.back{
+
+position:absolute;
+width:100%;
+height:100%;
+background:#ff8eb6;
+border-radius:15px;
+
+}
+
+.flap{
+
+position:absolute;
+width:100%;
+height:160px;
+background:#ff6ca4;
+clip-path:polygon(0 0,100% 0,50% 100%);
+transform-origin:top;
+transition:1s;
+z-index:4;
+
+}
+
+.paper{
+
+position:absolute;
+left:20px;
+right:20px;
+top:20px;
+bottom:20px;
+background:white;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+transition:1s;
+z-index:2;
+
+}
+
+.paper h1{
+
+font-family:Great Vibes;
+font-size:42px;
+color:#ff3d83;
+
+}
+
+.paper p{
+
+margin-top:15px;
+color:#666;
+
+}
+
+.open .flap{
+
+transform:rotateX(180deg);
+
+}
+
+.open .paper{
+
+transform:translateY(-170px);
+
+}
+
+#next{
+
+display:none;
+
+position:absolute;
+
+bottom:80px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+padding:15px 40px;
+
+background:#ff4b91;
+
+color:white;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+box-shadow:0 10px 30px rgba(255,0,120,.3);
+
+}
+
+#next:hover{
+
+transform:translateX(-50%) scale(1.05);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<div class="center">
+
+<div class="envelope" id="env">
+
+<div class="back"></div>
+
+<div class="paper">
+
+<h1>Untuk Errika ❤️</h1>
+
+<p>Sebuah surat kecil dari Ras...</p>
+
+</div>
+
+<div class="flap"></div>
+
+</div>
+
+</div>
+
+<button id="next">
+Buka Surat 💌
+</button>
+
+<audio id="music" loop>
+
+<source src="ssstik.io_1782513338821.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+const env=document.getElementById("env");
+
+const btn=document.getElementById("next");
+
+const music=document.getElementById("music");
+
+env.onclick=()=>{
+
+env.classList.add("open");
+
+music.play().catch(()=>{});
+
+setTimeout(()=>{
+
+btn.style.display="block";
+
+},1200);
+
+}
+
+btn.onclick=()=>{
+
+alert("Bagian 2 nanti akan menampilkan isi surat ❤️");
+
+}
+
+const area=document.getElementById("particles");
+
+for(let i=0;i<80;i++){
+
+let d=document.createElement("div");
+
+d.className="fall";
+
+d.innerHTML=Math.random()>0.5?"❤️":"🌸";
+
+d.style.left=Math.random()*100+"vw";
+
+d.style.fontSize=(18+Math.random()*20)+"px";
+
+d.style.animationDuration=(5+Math.random()*8)+"s";
+
+d.style.opacity=Math.random();
+
+area.appendChild(d);
+
+}
+
+</script>
+
+</body>
+  </html>
